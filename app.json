@@ -2,17 +2,16 @@
   "pages":[
     "pages/index/index",
     "pages/more/more",
-    "pages/login/login",
-    "pages/logs/logs"
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#7acfa6",
+    "navigationBarBackgroundColor": "#4591f1",
     "navigationBarTitleText": "We河海",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
-    "selectedColor": "#84BD54",
+    "selectedColor": "#4591f1",
     "color": "#333",
     "backgroundColor": "#fff",
     "position": "bottom",
@@ -20,17 +19,17 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/tabBar/index.png",
-        "selectedIconPath": "images/tabBar/index@active.png"
+        "iconPath": "images/tabBar/home.png",
+        "selectedIconPath": "images/tabBar/home-active.png"
       },
       {
         "pagePath": "pages/more/more",
         "text": "更多",
-        "iconPath": "images/tabBar/more.png",
-        "selectedIconPath": "images/tabBar/holiday.png"
+        "iconPath": "images/tabBar/user.png",
+        "selectedIconPath": "images/tabBar/user-active1.png"
       }
     ]
   },
-  "style": "v2",
+
   "sitemapLocation": "sitemap.json"
 }

@@ -1,2 +1,2 @@
 <!--pages/more/more.wxml-->
-<text>pages/more/more.wxml</text>
+<button bindtap="login">登录</button>

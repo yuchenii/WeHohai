@@ -1,4 +1,6 @@
 // index.js
+
+import {request} from "../../request/index.js";
 // 获取应用实例
 const app = getApp()
 
@@ -44,5 +46,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  // async getData() {
+  //   const res = await request({url:"/categories"}).catch((err) =>{console.log(err)});
+  //   console.log(res);
+     
+  // },
+  // onShow(){
+  //   this.getData();
+  // }
 })
