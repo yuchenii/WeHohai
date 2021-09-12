@@ -22,9 +22,10 @@ page,view,text,swiper,item,image,navigator{
 
 page{
  /* 主题颜色 */
-  --themeColor: #009ee0;
+  --themeColor: #4591f1;
   /* 字体大小 */
   font-size: 28rpx;
+  height: 100%;
 
 }
 
