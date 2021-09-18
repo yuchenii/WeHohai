@@ -1,5 +1,7 @@
 /**app.wxss**/
 @import "./styles/iconfont.wxss";
+@import "./styles/colorui/main.wxss";
+@import "./styles/colorui/icon.wxss";
 
 /* .container {
   height: 100%;
@@ -32,3 +34,5 @@ page{
 image{
   width: 100%;
 }
+
+

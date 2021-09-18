@@ -1,3 +1,21 @@
 <!--index.wxml-->
-<text>home</text>
 
+<view class="container">
+    <view class="yiyan">
+        <view class="yiyan-title"><text class="cuIcon-titles text-green"></text><text>一言</text></view>
+        <view class="yiyan-text"><text>{{motto}}</text></view>
+    </view>
+    
+    <view wx:if="{{hasLogin}}">
+        
+    </view>
+
+    <block wx:else>
+       
+    <view class="remind-box margin-tb-sm text-center">
+      <image  class="remind-img" src="/images/nothing.png"></image>
+      <view>您咋还没绑定账号呢？</view>
+      <button class="cu-btn round bg-green shadow" bindtap="goLogin">绑定登录</button>
+    </view>
+  </block>
+</view>

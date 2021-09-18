@@ -79,6 +79,9 @@ page {
   height: 200rpx;
   transition: all 0.35s ease;
 }
+.container .login-content .login-content-logo image {
+  max-width: none;
+}
 @keyframes sway {
   0% {
     transform: translate3d(0, 20rpx, 0) rotate(-15deg);

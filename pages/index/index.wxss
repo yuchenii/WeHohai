@@ -1,19 +1,25 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
+page {
+  background-color: #f1f1f1;
 }
-
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.container {
+  margin: 30rpx;
+  color: #666;
 }
-
-.usermotto {
-  margin-top: 200px;
+.container .yiyan {
+  background-color: #fff;
+  border-radius: 6rpx;
+  padding: 20rpx;
+}
+.container .yiyan .yiyan-title {
+  padding-top: 20rpx;
+}
+.container .yiyan .yiyan-text {
+  padding-top: 20rpx;
+  text-indent: 1em;
+}
+.container .remind-box .remind-img {
+  width: 250rpx;
+  height: 250rpx;
+  padding-bottom: 25rpx;
 }
