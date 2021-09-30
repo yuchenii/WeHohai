@@ -1,21 +1,26 @@
-<!--index.wxml-->
-
+<!-- index.wxml -->
 <view class="container">
-    <view class="yiyan">
-        <view class="yiyan-title"><text class="cuIcon-titles text-green"></text><text>一言</text></view>
-        <view class="yiyan-text"><text>{{motto}}</text></view>
-    </view>
-    
-    <view wx:if="{{hasLogin}}">
-        
-    </view>
+  <view class="index-title">
+    <view class="title-greeting"><span>{{greeting}}</span>, 世界</view>
+    <view class="title-time">{{time}}</view>
+  </view>
 
-    <block wx:else>
-       
+  <view class="yiyan">
+    <view class="yiyan-title">
+      <text class="cuIcon-titles text-green"></text>
+      <text>一言</text>
+    </view>
+    <view class="yiyan-text">
+      <text>{{motto}}</text>
+    </view>
+  </view>
+  <view wx:if="{{hasLogin}}"></view>
+  <block wx:else>
     <view class="remind-box margin-tb-sm text-center">
-      <image  class="remind-img" src="/images/nothing.png"></image>
+      <image class="remind-img" src="/images/nothing.png"></image>
       <view>您咋还没绑定账号呢？</view>
-      <button class="cu-btn round bg-green shadow" bindtap="goLogin">绑定登录</button>
+      <navigator class="cu-btn round bg-blue shadow" url="../login/login">绑定登录</navigator>
     </view>
   </block>
+  <button  bindtap="getuser"> 获取头像昵称 </button>
 </view>

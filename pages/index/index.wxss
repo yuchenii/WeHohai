@@ -6,7 +6,16 @@ page {
   margin: 30rpx;
   color: #666;
 }
+.container .index-title .title-greeting {
+  font-weight: bold;
+  font-size: 50rpx;
+  color: black;
+}
+.container .index-title .title-time {
+  margin-top: 30rpx;
+}
 .container .yiyan {
+  margin-top: 40rpx;
   background-color: #fff;
   border-radius: 6rpx;
   padding: 20rpx;
@@ -19,7 +28,12 @@ page {
   text-indent: 1em;
 }
 .container .remind-box .remind-img {
+  margin-top: 30rpx;
   width: 250rpx;
   height: 250rpx;
   padding-bottom: 25rpx;
+}
+.container .remind-box .bg-blue {
+  margin-top: 20rpx;
+  background-color: #4591f1;
 }
