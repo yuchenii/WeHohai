@@ -1,6 +1,7 @@
 // index.js
 
-import {request} from "../../request/index.js";
+import { request } from "../../request/index.js";
+import { login, getUserProfile } from "../../utils/asyncWx.js";
 // 获取应用实例
 const app = getApp()
 
@@ -8,6 +9,7 @@ Page({
   data: {
     greeting: "早上好",
     time: "9月30日 星期四",
+    token:"",
     hasLogin: false,
     motto: 'Hello World',
     userInfo: {},
@@ -38,6 +40,25 @@ Page({
   },
 
   getuser(){
+
+
+    wx.login({
+      success (res) {
+        if (res.code) {
+          //发起网络请求
+          // wx.request({
+          //   url: 'https://example.com/onLogin',
+          //   data: {
+          //     code: res.code
+          //   }
+          // })
+          console.log(res);
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
@@ -82,6 +103,33 @@ Page({
       time: date.getMonth() + 1 +"月" + date.getDate()
       +"日 " + day[date.getDay()]
     })
+  },
+
+
+  async handleGetUser() {
+   
+    let resdetail = {};
+
+    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
+    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    await wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({userInfo:res});
+        resdetail = res;
+        console.log(res);
+        console.log(resdetail);
+        
+      },
+      fail: (err) => {
+        console.log(err);
+      }
+    })
+       // 获取小程序登陆成功后的code
+       const { code } = await login();
+       console.log(code);
+
+    
   },
 
   async getData() {

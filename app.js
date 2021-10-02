@@ -1,19 +1,27 @@
 // app.js
+import { request } from "./request/index.js"
+import { login } from "./utils/asyncWx.js"
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    
+    // 检查 token 是否有效
+    let wxtoken = "";
+    let now = new Date();
+    if(!(wxtoken = wx.getStorageSync('wxtoken')) || (wxtoken.expires < now.getTime()/1000)){
+      this.getNewToken();
+    }
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    
+    
   },
   globalData: {
     userInfo: null
+  },
+  async getNewToken(){
+    const { code } = await login();
+    // console.log(code);
+    const  {data}  = await request({ url: "/users/wxlogin", data: { code }, method: "post" }).catch((err) =>{console.log(err)});
+    wx.setStorageSync('wxtoken', data);
+    return data.token;
   }
 })
